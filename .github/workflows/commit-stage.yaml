@@ -45,7 +45,8 @@ jobs:
           kubectl: 1.28.4
           kubeval: 0.16.1
           command: |
-            kubeval --strict -d k8s
+            kustomize build k8s | kubeval --strict -
+#            kubeval --strict -d k8s
 
   package:
     name: Package and Publish
